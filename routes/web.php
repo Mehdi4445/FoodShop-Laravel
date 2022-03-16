@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,4 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',[App\Http\Controllers\Shop\MainController::class,'index']);
