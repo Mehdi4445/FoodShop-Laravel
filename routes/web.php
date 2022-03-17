@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+Route::get('/',[App\Http\Controllers\Shop\MainController::class,'index']);
+
 Route::get('/accueil',[App\Http\Controllers\Shop\MainController::class,'index'])->name('accueil');
 
 Route::get('/prod/view/{id}',[App\Http\Controllers\Shop\MainController::class,'produit'])->name('voir_produit');
+
+Route::get('/categorie',[App\Http\Controllers\Shop\MainController::class,'filterCat']);
+
+
