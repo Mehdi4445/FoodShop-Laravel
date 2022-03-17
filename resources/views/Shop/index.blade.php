@@ -12,14 +12,11 @@
             <div class="card-body">
               <h2 >{{$produit->nom}}</h2>
               <p class="card-text ">{{$produit->description}}.</p>
-              <h3 class="text-danger">{{$produit->prix_ht}} TND</h3>
-              <div class="d-flex justify-content-between  align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">{{ number_format($produit->prix_ht,2) }} TND</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                            </div>
+                <small class="text-muted">Prepation : {{$produit->temps_prep}} min</small>
             </div>
           </div>
         </div>

@@ -19,6 +19,7 @@ class CreateProduitsTable extends Migration
             $table->string("nom");
             $table->float("prix_ht");
             $table->text("description");
+            $table->int("temps_prep");
             $table->string("photo_principale");
         });
     }
