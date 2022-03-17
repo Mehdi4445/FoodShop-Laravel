@@ -14,7 +14,7 @@
               <p class="card-text ">{{$produit->description}}.</p>
               <div class="d-flex justify-content-between align-items-center">
                                 <span class="price">{{ number_format($produit->prix_ht,2) }} TND</span>
-                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                                <a href="{{ route('voir_produit',['id'=>$produit->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
                             </div>
                 <small class="text-muted">Prepation : {{$produit->temps_prep}} min</small>
             </div>

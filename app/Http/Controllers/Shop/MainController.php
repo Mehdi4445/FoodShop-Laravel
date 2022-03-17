@@ -11,9 +11,15 @@ class MainController extends Controller
     public function index(){
 
         $produits = Produit::all();
-        
-
         return view('shop.index', compact('produits'));
+
+    }
+
+    public function produit(Request $request){
+
+        $produit = Produit::find($request->id);
+
+        return view('shop.produit', compact('produit'));
 
     }
 }
