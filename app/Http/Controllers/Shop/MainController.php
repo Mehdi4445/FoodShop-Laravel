@@ -24,10 +24,12 @@ class MainController extends Controller
 
     }
 
-    public function filterCat(){
+    public function filterCat(Request $request){
 
-        $categories = Category::where('is_online',1)->get();
+        $produits = Produit::where('category_id', $request->id)->get();
 
-        return view('shop.categorie', compact('categories'));
+       // $categories = Category::where('is_online',1)->get();
+
+        return view('shop.categorie', compact('produits'));
     }
 }

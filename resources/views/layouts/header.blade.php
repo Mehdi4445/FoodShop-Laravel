@@ -23,10 +23,9 @@
 
               @foreach($categories as $category)
               <li class="nav-item">
-                  <a class="nav-link" href="#">{{$category->nom}}</a>
+                  <a class="nav-link" href="{{ route('voir_produits_par_cat',['id'=>$category->id]) }}">{{$category->nom}}</a>
               </li>
               @endforeach
-        
           </ul>
       </div>
   </nav>

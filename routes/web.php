@@ -25,6 +25,6 @@ Route::get('/accueil',[App\Http\Controllers\Shop\MainController::class,'index'])
 
 Route::get('/prod/view/{id}',[App\Http\Controllers\Shop\MainController::class,'produit'])->name('voir_produit');
 
-Route::get('/categorie',[App\Http\Controllers\Shop\MainController::class,'filterCat']);
+Route::get('/categorie/{id}',[App\Http\Controllers\Shop\MainController::class,'filterCat'])->name('voir_produits_par_cat');
 
 
