@@ -32,7 +32,7 @@ class Category extends Model
 
     public function produits(){
 
-        $produits = $this->produitsParent()->get()->merge($this->prodEnf()->get());
+        $produits = $this->produitsParent()->with('category')->get()->merge($this->prodEnf()->with('category')->get());
         return $produits;
     }
 

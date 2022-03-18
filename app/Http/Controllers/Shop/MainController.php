@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     public function index(){
 
-        $produits = Produit::all();
+        $produits = Produit::with('category')->get();
         //dd($produits);
         return view('shop.index', compact('produits'));
 
