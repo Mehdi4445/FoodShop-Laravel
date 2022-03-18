@@ -27,4 +27,6 @@ Route::get('/prod/view/{id}',[App\Http\Controllers\Shop\MainController::class,'p
 
 Route::get('/categorie/{id}',[App\Http\Controllers\Shop\MainController::class,'filterCat'])->name('voir_produits_par_cat');
 
+Route::get('/tag/{id}',[App\Http\Controllers\Shop\MainController::class,'filterTag'])->name('voir_produits_par_tag');
+
 

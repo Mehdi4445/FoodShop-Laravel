@@ -7,6 +7,7 @@
         <div class="container-fluid">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
+                    @if(isset($category))
                     @if($category->parent_id !== null) 
                     <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('voir_produits_par_cat',['id'=>$category->parent->id]) }}">{{ $category->parent->nom }}</a></li>
                     @endif
@@ -14,7 +15,13 @@
                     @foreach($category->enfants as $enfant)
                     <li class="breadcrumb-item active">
                         <a href="{{ route('voir_produits_par_cat',['id'=>$enfant->id]) }}">{{$enfant->nom}}</a></li>
-                    @endforeach           
+                    @endforeach     
+                    
+                    @else
+
+                    <li class="breadcrumb-item active" aria-current="page">{{ $tag->nom }}</li>
+
+                    @endif
                 </ol>
             </nav>
             <div class="row">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\Models\Tag;
 use App\Models\Produit;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -27,15 +28,17 @@ class MainController extends Controller
 
     public function filterCat(Request $request){
 
-       // $produits = Produit::where('category_id', $request->id)->get();
-
-
-       // $categories = Category::where('is_online',1)->get();
-
        $category = Category::find($request->id);
        $produits = $category->produits();
 
-
         return view('shop.categorie', compact('produits', 'category'));
     }
+
+    public function filterTag(Request $request){
+
+        $tag = Tag::find($request->id);
+        $produits = $tag->produits;
+ 
+         return view('shop.categorie', compact('produits', 'tag'));
+     }
 }

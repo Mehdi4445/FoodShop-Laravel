@@ -6,13 +6,7 @@
 
 <main role="main">
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="#">Films</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Les goonies</li>
-            </ol>
-        </nav>
+            <br><br><br>
             <div class="row justify-content-between">
                 <div class="col-6">
                     <div class="card mb-4 box-shadow">
@@ -24,6 +18,9 @@
                     <h4>{{number_format($produit->prix_ht,2)}} TND</h4>
                     <h5>{{$produit->temps_prep}} min</h5>
                     <p class="lead text-muted">{{$produit->description}}</p>
+                    @foreach($produit->tags as $tag)
+                    <span class="badge-info"><a href="{{ route('voir_produits_par_tag',['id'=>$tag->id]) }}">{{$tag->nom}}</a></span>
+                    @endforeach
                     <hr>
                     <label for="size">Choisissez votre taille</label>
                     <p>
