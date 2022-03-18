@@ -10,6 +10,7 @@ class HeaderComposer
 {
     public function compose(View $view){
         
-        $view->with('categories', Category::where('is_online',1)->get());
+        $matches=['is_online'=>1, 'parent_id'=>null];
+        $view->with('categories', Category::where($matches)->get());
     }
 }

@@ -1,5 +1,4 @@
 <header>
-  
   <div class="navbar navbar-dark bg-dark box-shadow">
       <div class="container d-flex justify-content-between">
           <a href="{{ route('accueil')}}" class="navbar-brand d-flex align-items-center">
@@ -12,7 +11,6 @@
           </ul>
       </div>
   </div>
-
   <nav class="navbar navbar-expand-lg navbar-light bg-red">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +18,6 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
-
               @foreach($categories as $category)
               <li class="nav-item">
                   <a class="nav-link" href="{{ route('voir_produits_par_cat',['id'=>$category->id]) }}">{{$category->nom}}</a>
