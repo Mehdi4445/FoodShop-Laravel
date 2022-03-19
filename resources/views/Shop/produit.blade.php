@@ -22,10 +22,18 @@
                     <span class="badge-info"><a href="{{ route('voir_produits_par_tag',['id'=>$tag->id]) }}">{{$tag->nom}}</a></span>
                     @endforeach
                     <hr>
-                    <label for="size">Choisissez votre taille</label>
-                    <p>
-                        <a href="#" class="btn btn-cart my-2 btn-block"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                    </p>
+                    <form action="{{ route('cart_add', ['id'=>$produit->id]) }}" method="POST" id="panier_add">
+                        @csrf
+                    <label class="my-1" for="size">Choisissez votre portion :</label>
+                    <select name="portion" id="portion" class="form-control my-3">
+                        <option value="Por_Nor">Portion normal</option>
+                        <option value="Por_Lar">Portion large</option>
+                        <option value="Por_Fam">Portion Familiale</option>
+                    </select>
+                    <label class="my-1" for="qte">Quantité :</label>
+                    <input name="qte" id="qte" type="number" value="1" class="form-control my-3"/>
+                    </form>
+                    <button type="submit" form="panier_add" class="btn btn-cart my-2 btn-block"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</button>
                 </div>
             </div>
         </div>

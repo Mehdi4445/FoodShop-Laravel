@@ -29,4 +29,8 @@ Route::get('/categorie/{id}',[App\Http\Controllers\Shop\MainController::class,'f
 
 Route::get('/tag/{id}',[App\Http\Controllers\Shop\MainController::class,'filterTag'])->name('voir_produits_par_tag');
 
+Route::post('/panier/add/{id}',[App\Http\Controllers\Shop\CartController::class,'add'])->name('cart_add');
+
+Route::get('/panier',[App\Http\Controllers\Shop\CartController::class,'index'])->name('cart_index');
+
 
