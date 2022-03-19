@@ -29,53 +29,32 @@
                 </div>
             </div>
         </div>
+    <br>
+@if(count($produit->recommandations) > 0)
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
                 <h3>Vous aimerez aussi :</h3>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img src="produits/hulk.jpg" class="card-img-top img-fluid" alt="Responsive image">
-
-                        <div class="card-body">
-                            <div class="d-flex justify-content-end">
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                @foreach($produit->recommandations as $produit_recomm)
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img src="{{ asset('produits/'.$produit_recomm->photo_principale )}}" class="card-img-top img-fluid" alt="Responsive image">
+                            <div class="card-body">
+                            <p class="card-text ">{{$produit_recomm->description}}.</p> 
+                                <div class="d-flex justify-content-end">
+                                    <div class="btn-group">
+                                        <a href="{{ route('voir_produit',['id'=>$produit_recomm->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img src="produits/krusty_simpsons.jpg" class="card-img-top img-fluid" alt="Responsive image">
-
-                        <div class="card-body">
-                            <div class="d-flex justify-content-end">
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img src="produits/star_trek_kirk.jpg" class="card-img-top img-fluid" alt="Responsive image">
-
-                        <div class="card-body">
-                            <div class="d-flex justify-content-end">
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
+@endif
 </main>
 @endsection

@@ -13,7 +13,7 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        /*$category= new \App\Models\Category();
+        $category= new \App\Models\Category();
         $category->nom = "Snack";
         $category->is_online = "1";
         $category->save();
@@ -31,7 +31,7 @@ class CategoryTableSeeder extends Seeder
         $category4= new \App\Models\Category();
         $category4->nom = "Petit-déj";
         $category4->is_online = "1";
-        $category4->save();*/
+        $category4->save();
 
         $category5= new \App\Models\Category();
         $category5->nom = "Cake";
