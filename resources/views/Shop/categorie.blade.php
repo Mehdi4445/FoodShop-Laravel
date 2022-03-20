@@ -33,7 +33,7 @@
                                 <p class="card-text">{{$produit->nom}} <br> {{$produit->description}}.</p>
                                 <h5>{{$produit->temps_prep}} min</h5>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">{{number_format($produit->prix_ht,2)}} TND</span>
+                                    <span class="price">{{ $produit->prixTTC() }} TND</span>
                                     <a href="{{route('voir_produit',['id'=>$produit->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
                                 </div>
                             </div>

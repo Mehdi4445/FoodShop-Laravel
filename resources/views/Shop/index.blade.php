@@ -14,7 +14,7 @@
               <span class="badge-info"><a href="{{ route('voir_produits_par_cat',['id'=>$produit->category->id]) }}">{{$produit->category->nom}}</a></span>
               <p class="card-text ">{{$produit->description}}.</p> 
               <div class="d-flex justify-content-between align-items-center">
-                                <span class="price">{{ number_format($produit->prix_ht,2) }} TND</span>
+                                <span class="price">{{ $produit->prixTTC() }} TND</span>
                                 <a href="{{ route('voir_produit',['id'=>$produit->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
                             </div>
                 <small class="text-muted">Prepation : {{$produit->temps_prep}} min</small>

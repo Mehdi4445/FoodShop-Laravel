@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-6">
                     <h1 class="jumbotron-heading">{{$produit->nom}}</h1>
-                    <h4>{{number_format($produit->prix_ht,2)}} TND</h4>
+                    <h4>{{ $produit->prixTTC() }} TND</h4>
                     <h5>{{$produit->temps_prep}} min</h5>
                     <p class="lead text-muted">{{$produit->description}}</p>
                     @foreach($produit->tags as $tag)
@@ -26,9 +26,9 @@
                         @csrf
                     <label class="my-1" for="size">Choisissez votre portion :</label>
                     <select name="portion" id="portion" class="form-control my-3">
-                        <option value="Por_Nor">Portion normal</option>
-                        <option value="Por_Lar">Portion large</option>
-                        <option value="Por_Fam">Portion Familiale</option>
+                        <option value="Portion Normal">Portion normal</option>
+                        <option value="Portion Large">Portion large</option>
+                        <option value="Portion Familiale">Portion Familiale</option>
                     </select>
                     <label class="my-1" for="qte">Quantité :</label>
                     <input name="qte" id="qte" type="number" value="1" class="form-control my-3"/>

@@ -13,6 +13,8 @@ class Produit extends Model
 {
     use HasFactory;
 
+    private static $facteur_tva = 1.19;
+
     public function category(){
 
         return $this->belongsTo("App\Models\Category");
@@ -31,6 +33,11 @@ class Produit extends Model
 
     }
 
+    public function prixTTC(){
+
+        $prix_ttc = $this->prix_ht * self::$facteur_tva;
+        return number_format($prix_ttc,2);
+    }
 
 
 }
