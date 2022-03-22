@@ -8,10 +8,13 @@ use App\Models\Produit;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravelista\Comments\Commentable;
 
 class Produit extends Model
 {
     use HasFactory;
+
+    use Commentable;
 
     private static $facteur_tva = 1.19;
 

@@ -38,31 +38,32 @@
             </div>
         </div>
     <br>
-@if(count($produit->recommandations) > 0)
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <h3>Vous aimerez aussi :</h3>
-            </div>
-            <div class="row">
-                @foreach($produit->recommandations as $produit_recomm)
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img src="{{ asset('produits/'.$produit_recomm->photo_principale )}}" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                            <p class="card-text ">{{$produit_recomm->description}}.</p> 
-                                <div class="d-flex justify-content-end">
-                                    <div class="btn-group">
-                                        <a href="{{ route('voir_produit',['id'=>$produit_recomm->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
+    <div class="container">
+            @if(count($produit->recommandations) > 0)
+                <div class="album py-5 bg-light">
+                        <div class="row">
+                            <h3>Vous aimerez aussi :</h3>
+                        </div>
+                        <div class="row">
+                            @foreach($produit->recommandations as $produit_recomm)
+                                <div class="col-md-4">
+                                    <div class="card mb-4 box-shadow">
+                                        <img src="{{ asset('produits/'.$produit_recomm->photo_principale )}}" class="card-img-top img-fluid" alt="Responsive image">
+                                        <div class="card-body">
+                                        <p class="card-text ">{{$produit_recomm->description}}.</p> 
+                                            <div class="d-flex justify-content-end">
+                                                <div class="btn-group">
+                                                    <a href="{{ route('voir_produit',['id'=>$produit_recomm->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
+            @endif
+        @comments(['model' => $produit])
     </div>
-@endif
 </main>
 @endsection
