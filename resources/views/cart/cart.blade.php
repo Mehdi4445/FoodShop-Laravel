@@ -61,8 +61,17 @@
                 </tr>
                 </tfoot>
             </table>
-            <a class="btn btn-block btn-outline-dark" href="">Commander</a>
+            @if (Route::has('login'))
+               
+                    @auth
+                    <a class="btn btn-block btn-outline-dark"  href="{{ route('feedback') }}">Commander</a>
+                    @else
+                    <a class="btn btn-block btn-outline-dark"  href="{{ route('register') }}">Commander</a>
+
+                    @endauth          
+            @endif
         </div>
+
     </section>
 </main>
 @endsection

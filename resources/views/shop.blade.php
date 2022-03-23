@@ -21,5 +21,7 @@
 
 @yield('theProd')
 
+
+
 @include('layouts.footer')
 </body>

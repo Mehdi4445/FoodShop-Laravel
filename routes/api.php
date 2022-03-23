@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Shop\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/registerForm', [App\Http\Controllers\Shop\AuthController::class,'RegisterForm'])->name('registerForm');
+
+Route::post('/registerUser', [App\Http\Controllers\Shop\AuthController::class,'register'])->name('registerUser');
+
+Route::get('/Feedback', [App\Http\Controllers\Shop\MainController::class,'feedback'])->name('feedback');
+
+Route::group(['middleware' => ['auth:sanctum']], function() {
+
 });
+ 
+//Route::middleware('auth:sanctum')->get('/user', function () {
+    
+//});

@@ -34,3 +34,7 @@ Route::post('/panier/add/{id}',[App\Http\Controllers\Shop\CartController::class,
 Route::get('/panier',[App\Http\Controllers\Shop\CartController::class,'index'])->name('cart_index');
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

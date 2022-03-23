@@ -41,4 +41,9 @@ class MainController extends Controller
  
          return view('shop.categorie', compact('produits', 'tag'));
      }
+
+     public function feedback(){
+
+        echo 'ddddddd0';
+     }
 }
