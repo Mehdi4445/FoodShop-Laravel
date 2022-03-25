@@ -24,3 +24,7 @@ Route::post('/registerUser', [App\Http\Controllers\Shop\AuthController::class,'r
 Route::get('/Feedback', [App\Http\Controllers\Shop\MainController::class,'feedback'])->name('feedback');
 
 Route::post('/registerFeedback', [App\Http\Controllers\Shop\AuthController::class,'feedbackUser'])->name('feedbackUser');
+
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/Feedback', function () {
+    return view('profile.feedback');
+})->name('feedback');*/
