@@ -23,10 +23,4 @@ Route::post('/registerUser', [App\Http\Controllers\Shop\AuthController::class,'r
 
 Route::get('/Feedback', [App\Http\Controllers\Shop\MainController::class,'feedback'])->name('feedback');
 
-Route::group(['middleware' => ['auth:sanctum']], function() {
-
-});
- 
-//Route::middleware('auth:sanctum')->get('/user', function () {
-    
-//});
+Route::post('/registerFeedback', [App\Http\Controllers\Shop\AuthController::class,'feedbackUser'])->name('feedbackUser');

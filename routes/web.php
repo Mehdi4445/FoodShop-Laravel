@@ -36,5 +36,5 @@ Route::get('/panier',[App\Http\Controllers\Shop\CartController::class,'index'])-
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile.show');
 })->name('dashboard');

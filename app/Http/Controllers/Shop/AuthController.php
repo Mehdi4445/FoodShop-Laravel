@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Models\User;
+use App\Models\feedback;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -34,8 +35,37 @@ class AuthController extends Controller
             'token' => $token
         ];
 
-       //return response($response, 201);
         return redirect(route('accueil'));
-        //return view('dashboard');
     }
+
+    public function feedbackUser(Request $request){
+
+        $request->validate([
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ]);
+
+        $newImageName =  time().'.'.$request->image->extension();
+
+      
+
+         $request->image->move(public_path('feedbacks'), $newImageName);
+
+     
+
+        $feedback = feedback::create([
+            'image_path' => $newImageName
+        ]);
+
+        //dd();
+     
+
+        return redirect('/api/Feedback');
+
+    
+    
+    }
+
+  
+
+
 }

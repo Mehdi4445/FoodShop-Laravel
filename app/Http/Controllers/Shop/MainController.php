@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shop;
 use App\Models\Tag;
 use App\Models\Produit;
 use App\Models\Category;
+use App\Models\feedback;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -44,6 +45,15 @@ class MainController extends Controller
 
      public function feedback(){
 
-        echo 'ddddddd0';
+
+        $data = feedback::all();
+
+       //dd($data);
+
+        return view('profile.feedback', ['feedbacks'=>$data]);
+
+
      }
+
+
 }
